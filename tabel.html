@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tugas tabel HTML</title>
+
+    <!-- 
+          Nama : Ega Gofur Triwahana
+          kelas : X RPL 2
+          NO : 13
+          Tanggal : 01-03-2022
+          TUGAS : PEMROGRAMAN DASAR MATERI TABEL -->
+
+    <!-- style css -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+      }
+
+      body {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        padding-top: 14em;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+      }
+
+      .container {
+        width: 800px;
+        height: 200px;
+        box-sizing: border-box;
+      }
+
+      h2 {
+        font-family: poppins;
+        color: rgba(255, 255, 255, 0.9);
+        text-align: center;
+        padding-bottom: 8px;
+      }
+
+      h3 {
+        color: rgba(255, 255, 255, 0.9);
+        padding-bottom: 5px;
+      }
+
+      table {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+      }
+
+      td:hover {
+        background-color: rgba(7, 25, 49, 0.5);
+        color: #fff;
+      }
+    </style>
+
+  </head>
+  <body id="animation-bg">
+    <div class="container">
+      <a href="https://egagofur-socialprofile.web.app/" target="_blank"><h2>TUGAS TABEL</h2></a>
+      <p style="color:rgba(255, 255, 255, 0.9)"><b>Jam :</b><h3 id="jam"></h3></p>
+      <table border="1" cellspacing="0" cellpadding="12">
+        <tr style="background-color: rgba(51, 102, 255, 0.9);  color: rgba(255, 255, 255, 0.9)">
+          <th colspan="1" rowspan="2">Nama</th>
+          <th colspan="3">Nilai</th>
+        </tr>
+        <tr style="background-color: rgba(51, 102, 255, 0.9); color: rgba(255, 255, 255, 0.9)">
+          <th colspan="1">Kimia</th>
+          <th colspan="1">Fisika</th>
+          <th colspan="1">Biologi</th>
+        </tr>
+        <tr style="background-color: rgba(255, 255, 255, 0.9)">
+          <td colspan="1">Robby</td>
+          <td colspan="1">76</td>
+          <td colspan="1">80</td>
+          <td colspan="1">81</td>
+        </tr>
+        <tr style="background-color: rgba(255, 255, 255, 0.9)">
+          <td colspan="1">Rendi</td>
+          <td colspan="1">84</td>
+          <td colspan="1">70</td>
+          <td colspan="1">75</td>
+        </tr>
+        <tr style="background-color: rgba(255, 255, 255, 0.9)">
+          <td colspan="1">Alfian</td>
+          <td colspan="1">96</td>
+          <td colspan="1">70</td>
+          <td colspan="1">71</td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+    <script>
+      VANTA.BIRDS({
+        el: "#animation-bg",
+        mouseControls: true,
+        touchControls: true,
+        gyroControls: false,
+        minHeight: 745.0,
+        minWidth: 800.0,
+        scale: 1.0,
+        scaleMobile: 1.0,
+      });
+    </script>
+
+<script type="text/javascript">
+  window.onload = function() { jam(); }
+ 
+  function jam() {
+   var e = document.getElementById('jam'),
+   d = new Date(), h, m, s;
+   h = d.getHours();
+   m = set(d.getMinutes());
+   s = set(d.getSeconds());
+ 
+   e.innerHTML = h +':'+ m +':'+ s;
+ 
+   setTimeout('jam()', 1000);
+  }
+ 
+  function set(e) {
+   e = e < 10 ? '0'+ e : e;
+   return e;
+  }
+ </script>
+  </body>
+</html>
